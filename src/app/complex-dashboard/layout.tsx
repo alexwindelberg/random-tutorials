@@ -3,15 +3,20 @@ export default function DashboardLayouts({
     childern,
     users,
     revenue,
-    notifications
+    notifications,
+    login
 }: {
     childern: React.ReactNode;
     users: React.ReactNode;
     revenue: React.ReactNode
-    notifications: React.ReactNode
+    notifications: React.ReactNode,
+    login: React.ReactNode
 }) {
-    return (
-        <>
+
+    const logedin = false;
+
+    return logedin ?
+        (<>
             <div>{childern}</div>
             <div>
                 {users}
@@ -22,6 +27,5 @@ export default function DashboardLayouts({
             <div>
                 {notifications}
             </div>
-        </>
-    )
+        </>) : (<div>{login}</div>)
 }
